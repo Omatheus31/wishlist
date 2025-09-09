@@ -1,0 +1,89 @@
+/* style.css */
+
+/* Importa uma fonte bonita do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Reseta estilos padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5; /* Um cinza bem claro */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1a1a1a;
+}
+
+.form-desejo {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.form-desejo input[type="text"] {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.form-desejo input[type="text"]:focus {
+    outline: none;
+    border-color: #A4D932; /* Usa o verde que você gosta */
+}
+
+.form-desejo button {
+    padding: 12px 20px;
+    border: none;
+    background-color: #A4D932; /* Verde */
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.form-desejo button:hover {
+    background-color: #8dbf29; /* Verde um pouco mais escuro */
+}
+
+.lista-desejos {
+    list-style: none;
+}
+
+.lista-desejos li {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 5px solid #A4D932; /* Detalhe em verde */
+}
+
+.lista-desejos p {
+    text-align: center;
+    color: #888;
+}
