@@ -2,11 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -21,24 +17,16 @@ body {
 
 .container {
     width: 100%;
-    max-width: 600px;
+    max-width: 700px; /* Aumentei um pouco para caber tudo */
     background-color: #ffffff;
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #1a1a1a;
-}
+h1 { text-align: center; margin-bottom: 30px; color: #1a1a1a; }
 
-.form-desejo {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 30px;
-}
+.form-desejo { display: flex; gap: 10px; margin-bottom: 30px; }
 
 .form-desejo input[type="text"] {
     flex-grow: 1;
@@ -48,7 +36,15 @@ h1 {
     font-size: 16px;
 }
 
-.form-desejo input[type="text"]:focus {
+.form-desejo select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+.form-desejo input[type="text"]:focus, .form-desejo select:focus {
     outline: none;
     border-color: #A4D932;
 }
@@ -65,18 +61,9 @@ h1 {
     transition: background-color 0.2s;
 }
 
-.form-desejo button:hover {
-    background-color: #8dbf29;
-}
-
-.lista-desejos {
-    list-style: none;
-}
-
-.lista-desejos p {
-    text-align: center;
-    color: #888;
-}
+.form-desejo button:hover { background-color: #8dbf29; }
+.lista-desejos { list-style: none; }
+.lista-desejos p { text-align: center; color: #888; }
 
 .item-desejo {
     display: flex;
@@ -97,63 +84,39 @@ h1 {
     border-left-color: #6c757d;
 }
 
-.item-desejo.comprado span {
-    text-decoration: line-through;
-}
+.item-desejo.comprado .info-desejo span { text-decoration: line-through; }
+.info-desejo { flex-grow: 1; margin-right: 15px; display: flex; flex-direction: column; }
 
-.item-desejo span {
-    flex-grow: 1;
-    margin-right: 15px;
+.prioridade {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    color: #fff;
+    margin-top: 5px;
+    width: fit-content;
 }
+.prioridade-baixa { background-color: #6c757d; } /* Cinza */
+.prioridade-média { background-color: #ffc107; color: #1a1a1a; } /* Amarelo */
+.prioridade-alta { background-color: #e74c3c; } /* Vermelho */
 
-.acoes {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
-}
+
+.acoes { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
 
 .btn-comprar {
-    padding: 5px 10px;
-    border: none;
-    background-color: #28a745; /* Verde Sucesso */
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    font-size: 14px;
+    padding: 5px 10px; border: none; background-color: #28a745; color: white;
+    border-radius: 5px; cursor: pointer; transition: background-color 0.2s; font-size: 14px;
 }
-
-.btn-comprar:hover {
-    background-color: #218838;
-}
+.btn-comprar:hover { background-color: #218838; }
 
 .btn-editar {
-    display: inline-block;
-    padding: 5px 10px;
-    background-color: #3498db;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.2s;
-    font-size: 14px;
+    display: inline-block; padding: 5px 10px; background-color: #3498db; color: white;
+    text-decoration: none; border-radius: 5px; transition: background-color 0.2s; font-size: 14px;
 }
-
-.btn-editar:hover {
-    background-color: #2980b9;
-}
+.btn-editar:hover { background-color: #2980b9; }
 
 .btn-excluir {
-    padding: 5px 10px;
-    border: none;
-    background-color: #e74c3c;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    font-size: 14px;
+    padding: 5px 10px; border: none; background-color: #e74c3c; color: white;
+    border-radius: 5px; cursor: pointer; transition: background-color 0.2s; font-size: 14px;
 }
-
-.btn-excluir:hover {
-    background-color: #c0392b;
-}
+.btn-excluir:hover { background-color: #c0392b; }
