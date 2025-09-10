@@ -1,9 +1,7 @@
 /* style.css */
 
-/* Importa uma fonte bonita do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-/* Reseta estilos padrão do navegador */
 * {
     margin: 0;
     padding: 0;
@@ -12,13 +10,13 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f0f2f5; /* Um cinza bem claro */
+    background-color: #f0f2f5;
     color: #333;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     min-height: 100vh;
-    padding: 20px;
+    padding: 40px 20px;
 }
 
 .container {
@@ -52,13 +50,13 @@ h1 {
 
 .form-desejo input[type="text"]:focus {
     outline: none;
-    border-color: #A4D932; /* Usa o verde que você gosta */
+    border-color: #A4D932;
 }
 
 .form-desejo button {
     padding: 12px 20px;
     border: none;
-    background-color: #A4D932; /* Verde */
+    background-color: #A4D932;
     color: #fff;
     font-size: 16px;
     font-weight: 600;
@@ -68,19 +66,11 @@ h1 {
 }
 
 .form-desejo button:hover {
-    background-color: #8dbf29; /* Verde um pouco mais escuro */
+    background-color: #8dbf29;
 }
 
 .lista-desejos {
     list-style: none;
-}
-
-.lista-desejos li {
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    border-left: 5px solid #A4D932; /* Detalhe em verde */
 }
 
 .lista-desejos p {
@@ -97,37 +87,73 @@ h1 {
     border-radius: 8px;
     margin-bottom: 10px;
     border-left: 5px solid #A4D932;
+    word-break: break-word;
+    transition: all 0.3s ease;
 }
 
-.btn-excluir {
-    padding: 5px 10px;
-    border: none;
-    background-color: #e74c3c; /* Vermelho */
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
+.item-desejo.comprado {
+    opacity: 0.6;
+    background-color: #e9ecef;
+    border-left-color: #6c757d;
 }
 
-.btn-excluir:hover {
-    background-color: #c0392b; /* Vermelho mais escuro */
+.item-desejo.comprado span {
+    text-decoration: line-through;
+}
+
+.item-desejo span {
+    flex-grow: 1;
+    margin-right: 15px;
 }
 
 .acoes {
     display: flex;
+    align-items: center;
     gap: 10px;
+    flex-shrink: 0;
+}
+
+.btn-comprar {
+    padding: 5px 10px;
+    border: none;
+    background-color: #28a745; /* Verde Sucesso */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 14px;
+}
+
+.btn-comprar:hover {
+    background-color: #218838;
 }
 
 .btn-editar {
     display: inline-block;
     padding: 5px 10px;
-    background-color: #3498db; /* Azul */
+    background-color: #3498db;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.2s;
+    font-size: 14px;
 }
 
 .btn-editar:hover {
-    background-color: #2980b9; /* Azul mais escuro */
+    background-color: #2980b9;
+}
+
+.btn-excluir {
+    padding: 5px 10px;
+    border: none;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 14px;
+}
+
+.btn-excluir:hover {
+    background-color: #c0392b;
 }

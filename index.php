@@ -3,7 +3,8 @@
 
 require_once 'db.php';
 
-$stmt = $pdo->query('SELECT id, descricao FROM desejos ORDER BY data_criacao DESC');
+// A query agora ordena por status 'comprado' primeiro, depois por data
+$stmt = $pdo->query('SELECT id, descricao, comprado FROM desejos ORDER BY comprado ASC, data_criacao DESC');
 $desejos = $stmt->fetchAll();
 ?>
 
@@ -28,10 +29,20 @@ $desejos = $stmt->fetchAll();
         <ul class="lista-desejos">
             <?php if (count($desejos) > 0): ?>
                 <?php foreach ($desejos as $desejo): ?>
-                    <li class="item-desejo">
+                    <li class="item-desejo <?= $desejo['comprado'] ? 'comprado' : '' ?>">
                         <span><?= htmlspecialchars($desejo['descricao']) ?></span>
                         <div class="acoes">
-                            <a href="editar.php?id=<?= $desejo['id'] ?>" class="btn-editar">Editar</a>
+                            <form action="marcar_comprado.php" method="POST" style="display:inline;">
+                                <input type="hidden" name="id" value="<?= $desejo['id'] ?>">
+                                <button type="submit" class="btn-comprar">
+                                    <?= $desejo['comprado'] ? 'Desmarcar' : 'Comprado' ?>
+                                </button>
+                            </form>
+
+                            <?php if (!$desejo['comprado']): ?>
+                                <a href="editar.php?id=<?= $desejo['id'] ?>" class="btn-editar">Editar</a>
+                            <?php endif; ?>
+
                             <form action="excluir.php" method="POST" style="display:inline;">
                                 <input type="hidden" name="id" value="<?= $desejo['id'] ?>">
                                 <button type="submit" class="btn-excluir" onclick="return confirm('Tem certeza que deseja excluir este desejo?');">Excluir</button>
