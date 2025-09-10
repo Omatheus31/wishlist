@@ -1,10 +1,8 @@
 <?php
 // index.php
 
-// Inclui a conexão com o banco
 require_once 'db.php';
 
-// Busca todos os desejos no banco de dados, do mais novo para o mais antigo
 $stmt = $pdo->query('SELECT id, descricao FROM desejos ORDER BY data_criacao DESC');
 $desejos = $stmt->fetchAll();
 ?>
@@ -13,7 +11,7 @@ $desejos = $stmt->fetchAll();
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minha Lista de Desejos</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -34,9 +32,9 @@ $desejos = $stmt->fetchAll();
                         <span><?= htmlspecialchars($desejo['descricao']) ?></span>
                         <div class="acoes">
                             <a href="editar.php?id=<?= $desejo['id'] ?>" class="btn-editar">Editar</a>
-                            <form action="excluir.php" method="POST">
+                            <form action="excluir.php" method="POST" style="display:inline;">
                                 <input type="hidden" name="id" value="<?= $desejo['id'] ?>">
-                                <button type="submit" class="btn-excluir">Excluir</button>
+                                <button type="submit" class="btn-excluir" onclick="return confirm('Tem certeza que deseja excluir este desejo?');">Excluir</button>
                             </form>
                         </div>
                     </li>
