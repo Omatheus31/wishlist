@@ -87,3 +87,47 @@ h1 {
     text-align: center;
     color: #888;
 }
+
+.item-desejo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 5px solid #A4D932;
+}
+
+.btn-excluir {
+    padding: 5px 10px;
+    border: none;
+    background-color: #e74c3c; /* Vermelho */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-excluir:hover {
+    background-color: #c0392b; /* Vermelho mais escuro */
+}
+
+.acoes {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-editar {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #3498db; /* Azul */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.btn-editar:hover {
+    background-color: #2980b9; /* Azul mais escuro */
+}

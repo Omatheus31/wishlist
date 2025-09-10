@@ -13,7 +13,7 @@ $desejos = $stmt->fetchAll();
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
     <title>Minha Lista de Desejos</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -30,7 +30,16 @@ $desejos = $stmt->fetchAll();
         <ul class="lista-desejos">
             <?php if (count($desejos) > 0): ?>
                 <?php foreach ($desejos as $desejo): ?>
-                    <li><?= htmlspecialchars($desejo['descricao']) ?></li>
+                    <li class="item-desejo">
+                        <span><?= htmlspecialchars($desejo['descricao']) ?></span>
+                        <div class="acoes">
+                            <a href="editar.php?id=<?= $desejo['id'] ?>" class="btn-editar">Editar</a>
+                            <form action="excluir.php" method="POST">
+                                <input type="hidden" name="id" value="<?= $desejo['id'] ?>">
+                                <button type="submit" class="btn-excluir">Excluir</button>
+                            </form>
+                        </div>
+                    </li>
                 <?php endforeach; ?>
             <?php else: ?>
                 <p>Sua lista de desejos está vazia. Adicione algo!</p>
